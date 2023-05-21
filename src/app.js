@@ -16,6 +16,12 @@ app.use(cors())
 app.use(express.json());
 app.use('/', controller);
 
+app.get('/health', (req, res) => {
+    res.status(200).json({
+        status: "ok"
+    })
+})
+
 
 const server = app.listen(port, async (error) => {
     if (error != null){

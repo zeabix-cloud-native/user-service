@@ -2,7 +2,7 @@ const { Kafka } = require('kafkajs');
 const os = require('os');
 const hostname = os.hostname();
 
-const brokerUrl = process.env.KAFKA_BROKER_ADDRESSES || 'kafka-deployment-8656dc4dd8-2zlpd:9092'
+const brokerUrl = process.env.KAFKA_BROKER_ADDRESSES || 'kafka-service:9092'
 const consumerGroupId = process.env.CONSUMER_GROUP_ID || 'user-service'
 
 const kafka = new Kafka({
