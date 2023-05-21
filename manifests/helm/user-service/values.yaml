@@ -5,10 +5,10 @@
 replicaCount: 1
 
 image:
-  repository: zeabixloyaltyacr.azurecr.io/user-service:1.0
+  repository: zeabixloyaltyacr.azurecr.io/user-service
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "43c2ef7a50d80226412a2a0d6d583fe89f7b287e"
 
 imagePullSecrets: []
 nameOverride: ""
