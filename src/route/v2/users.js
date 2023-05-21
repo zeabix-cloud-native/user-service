@@ -37,4 +37,10 @@ router.put('/:userId', async (req, res) => {
 
 })
 
+// Admin
+router.get('/', async (req, res) => {
+    let users = await service.getAllV2();
+    res.status(200).json(users);
+})
+
 module.exports = router;

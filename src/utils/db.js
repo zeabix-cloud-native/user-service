@@ -31,6 +31,11 @@ const connect = async () => {
         const user = User.schemas(sequelize);
         const org = Org.schemas(sequelize);
 
+        //org.hasMany(user, { foreignKey: 'org_id', sourceKey: 'org_id'});
+        //user.belongsTo(org, { foreignKey: 'org_id', targetKey: 'org_id'} )
+
+        
+
         //await sequelize.sync({ force: true })
         await sequelize.sync({ alter: true });
     } catch (error) {

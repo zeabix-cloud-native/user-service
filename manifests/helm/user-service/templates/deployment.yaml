@@ -36,6 +36,8 @@ spec:
           env:
             - name: KAFKA_BROKER_ADDRESSES
               value: kafka-service:9092
+            - name: DB_HOST
+              value: mysql-service
           ports:
             - name: http
               containerPort: 3000

@@ -1,5 +1,6 @@
 const { sequelize } = require('../utils/db')
 const ModelUser = require('../models/users.model')
+const ModelOrg = require('../models/orgs.model')
 const { v4:uuidv4 } = require('uuid');
 
 const create = async(firstname, lastname, mobile, orgid) => {
@@ -48,6 +49,14 @@ const getAll = async() => {
     return users;
 }
 
+const getAllV2 = async() => {
+    const [results, metadata] = await sequelize.query(
+        "SELECT u.user_id, u.firstname, u.lastname, u.mobile, u.membership_tier, o.name as org_name , u.createdAt, u.updatedAt FROM users as u JOIN organizations as o ON u.org_id = o.org_id"
+    )
+
+    return results;
+}
+
 const isAvailable = (data) => {
     return (data !== '' && data != null && data != undefined)
 }
@@ -56,5 +65,6 @@ module.exports = {
     create,
     get,
     update,
-    getAll
+    getAll,
+    getAllV2
 }

@@ -8,7 +8,7 @@ image:
   repository: zeabixloyaltyacr.azurecr.io/user-service
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "b3ef04720703fda024f09a1a8bc16383fad3ba85"
+  tag: "6ba0b1a9ec93b8dbd0b713ce07b633519bb7717f"
 
 imagePullSecrets: []
 nameOverride: ""
