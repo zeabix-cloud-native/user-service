@@ -3,10 +3,11 @@ const ModelUser = require('../models/users.model')
 const ModelOrg = require('../models/orgs.model')
 const { v4:uuidv4 } = require('uuid');
 
-const create = async(firstname, lastname, mobile, orgid) => {
+const create = async(id, firstname, lastname, mobile, orgid) => {
     const User = ModelUser.schemas(sequelize);
+    let user_id = (id != null && id !== '' && id != undefined)? id : uuidv4();
     let user = await User.create({
-        user_id: uuidv4(),
+        user_id: user_id,
         firstname: firstname,
         lastname: lastname, 
         mobile: mobile,

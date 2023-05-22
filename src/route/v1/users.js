@@ -22,7 +22,7 @@ router.post('/', async (req, res) => {
     console.log(JSON.stringify(value));
     console.log(JSON.stringify(data));
 
-    let user = await service.create(value.firstname, value.lastname, value.mobile, value.org_id);
+    let user = await service.create(value.user_id, value.firstname, value.lastname, value.mobile, value.org_id);
     console.log(`User created (${user.user_id})`)
     res.status(201).json(user);
 });

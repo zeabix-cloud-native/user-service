@@ -1,6 +1,7 @@
 const Joi = require('joi');
 
 const createUserRequestValidator = Joi.object({
+    user_id:   Joi.string(),
     firstname: Joi.string()
                 .alphanum()
                 .min(3)
